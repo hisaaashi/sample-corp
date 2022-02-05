@@ -33,6 +33,7 @@ body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
   line-height: 1.5;
   background: #F3F3F3;
+   -webkit-text-size-adjust: 100%;
 }
 
 img {
