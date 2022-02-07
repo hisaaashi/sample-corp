@@ -566,6 +566,7 @@ img {
 
 .results__head {
   color: #fff;
+  overflow: hidden;
 }
 @media screen and (max-width: 767px) {
   .results__head {
