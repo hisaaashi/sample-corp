@@ -543,6 +543,7 @@ img {
   margin-top: 216px;
   background: #3E3E3E;
   margin-left: 40px;
+  overflow: hidden;
 }
 @media screen and (max-width: 767px) {
   .results {
