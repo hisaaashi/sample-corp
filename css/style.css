@@ -1103,12 +1103,12 @@ img {
   }
 }
 
-.inframe-wrap {
+.iframe-wrap {
   width: 100%;
   padding-top: 68.2414698163%;
   position: relative;
 }
-.inframe-wrap iframe {
+.iframe-wrap iframe {
   position: absolute;
   top: 0;
   left: 0;
