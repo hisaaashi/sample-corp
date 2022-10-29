@@ -53,11 +53,11 @@ $(function() {
     if (100 < jQuery(this).scrollTop()) {
       // is-showクラスをつける
   jQuery('.to-top').addClass( 'is-show' );
-  jQuery('.header').addClass('scroll-header');
+//   jQuery('.header').addClass('scroll-header');
     } else {
       // 100pxを下回ったらis-showクラスを削除
     jQuery('.to-top').removeClass( 'is-show' );
-    jQuery('.header').removeClass('scroll-header');
+//     jQuery('.header').removeClass('scroll-header');
     }
   });
 
