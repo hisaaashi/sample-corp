@@ -43,12 +43,6 @@ $(function() {
     let target = jQuery("#" == id ? "html" : id);
     // トップからの距離からヘッダー分の高さを引く
     let position = jQuery(target).offset().top - header;
-    if ("fixed" !== jQuery(".header").css("position")) {
-      position = jQuery(target).offset().top;
-    }
-    if (0 > position) {
-      position = 0;
-    }
     // その分だけ移動すればヘッダーと被りません
     jQuery("html, body").animate(
       {
