@@ -44,13 +44,19 @@ $(function() {
     // トップからの距離からヘッダー分の高さを引く
     let position = jQuery(target).offset().top - header;
     // その分だけ移動すればヘッダーと被りません
-    jQuery("html, body").animate(
-      {
-        scrollTop: position
-      },
-      speed
-    );
-    return false;
+    if ("fixed" !== jQuery(".header").css("position")) {
+			position = jQuery(target).offset().top;
+		}
+		if (0 > position) {
+			position = 0;
+		}
+		jQuery("html, body").animate(
+			{
+				scrollTop: position
+			},
+			speed
+		);
+		return false;
   });
 
 
