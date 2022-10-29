@@ -47,19 +47,18 @@ $(function() {
   });
 
 
-  // スクロール検知
-  jQuery(window).on("scroll", function() {
-    // トップから100px以上スクロールしたら
-    if (100 < jQuery(this).scrollTop()) {
-      // is-showクラスをつける
-  jQuery('.to-top').addClass( 'is-show' );
-//   jQuery('.header').addClass('scroll-header');
-    } else {
-      // 100pxを下回ったらis-showクラスを削除
-    jQuery('.to-top').removeClass( 'is-show' );
-//     jQuery('.header').removeClass('scroll-header');
-    }
-  });
+ // 変数pagetopの宣言
+ var pagetop = $('.to-top');
+
+// ページトップへ戻るボタンをクリックしたとき
+pagetop.on('click', function() {
+  $('html, body').animate (
+    { scrollTop : 0 },
+    400,
+    'swing',
+  );
+  return false;
+});
 
   // ヘッダーナビアンダーバー
   // jQuery('.header__inner ul li a').click(function() {
