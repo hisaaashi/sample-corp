@@ -34,28 +34,17 @@ $(function() {
   });
 
 
-  // #から始まるURLがクリックされた時
-	jQuery('a[href^="#"]').click(function() {
-		let header = jQuery(".header").innerHeight();
-		let speed = 300;
-		let id = jQuery(this).attr("href");
-		let target = jQuery("#" == id ? "html" : id);
-		let position = jQuery(target).offset().top - header;
-		if ("fixed" !== jQuery(".header").css("position")) {
-			position = jQuery(target).offset().top;
-		}
-		if (0 > position) {
-			position = 0;
-		}
-		jQuery("html, body").animate(
-			{
-				scrollTop: position
-			},
-			speed
-		);
-		return false;
-	});
+  var $header = $( '.header' );
 
+  // #から始まるURLがクリックされた時
+  $( 'a[href^="#"]' ).on( 'click', function(e){
+    var speed = 500;
+    var href= $( this ).attr( 'href' );
+    var target = $( href === '#' || href === '' ? 'html' : href );
+    var position = target.offset().top - $header.outerHeight();
+    $( 'html, body' ).animate( { scrollTop:position }, speed, 'swing' );
+    e.preventDefault();
+  });
 
 
   // スクロール検知
