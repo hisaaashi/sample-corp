@@ -34,17 +34,18 @@ $(function() {
   });
 
 
-  var $header = $( '.header' );
+ // 変数pagetopの宣言
+ var pagetop = $('.to-top');
 
-  // #から始まるURLがクリックされた時
-  $( 'a[href^="#"]' ).on( 'click', function(e){
-    var speed = 500;
-    var href= $( this ).attr( 'href' );
-    var target = $( href === '#' || href === '' ? 'html' : href );
-    var position = target.offset().top - $header.outerHeight();
-    $( 'html, body' ).animate( { scrollTop:position }, speed, 'swing' );
-    e.preventDefault();
-  });
+// ページトップへ戻るボタンをクリックしたとき
+pagetop.on('click', function() {
+  $('html, body').animate (
+    { scrollTop : 0 },
+    400,
+    'swing',
+  );
+  return false;
+});
 
 
  // 変数pagetopの宣言
