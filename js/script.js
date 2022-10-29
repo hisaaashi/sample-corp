@@ -34,18 +34,24 @@ $(function() {
   });
 
 
- // 変数pagetopの宣言
- var pagetop = $('.to-top');
-
-// ページトップへ戻るボタンをクリックしたとき
-pagetop.on('click', function() {
-  $('html, body').animate (
-    { scrollTop : 0 },
-    400,
-    'swing',
-  );
-  return false;
-});
+  // #から始まるURLがクリックされた時
+  jQuery('a[href^="#"]').click(function() {
+    // .headerクラスがついた要素の高さを取得
+    let header = jQuery(".header").innerHeight();
+    let speed = 300;
+    let id = jQuery(this).attr("href");
+    let target = jQuery("#" == id ? "html" : id);
+    // トップからの距離からヘッダー分の高さを引く
+    let position = jQuery(target).offset().top - header;
+    // その分だけ移動すればヘッダーと被りません
+    jQuery("html, body").animate(
+      {
+        scrollTop: position
+      },
+      speed
+    );
+    return false;
+  });
 
 
   // スクロール検知
@@ -54,11 +60,11 @@ pagetop.on('click', function() {
     if (100 < jQuery(this).scrollTop()) {
       // is-showクラスをつける
   jQuery('.to-top').addClass( 'is-show' );
-//   jQuery('.header').addClass('scroll-header');
+  jQuery('.header').addClass('scroll-header');
     } else {
       // 100pxを下回ったらis-showクラスを削除
     jQuery('.to-top').removeClass( 'is-show' );
-//     jQuery('.header').removeClass('scroll-header');
+    jQuery('.header').removeClass('scroll-header');
     }
   });
 
