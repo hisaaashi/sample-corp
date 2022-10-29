@@ -24,7 +24,7 @@ $(function() {
   new WOW().init();
 
   // WOWの挙動
-  jQuery('.fadeInUp').attr({'data-wow-duration': '2s',"data-wow-delay": ".3"});
+  jQuery('.fadeInUp').attr({"data-wow-duration": "2s","data-wow-delay": ".3"});
 
 
   // アコーディオン
@@ -43,6 +43,12 @@ $(function() {
     let target = jQuery("#" == id ? "html" : id);
     // トップからの距離からヘッダー分の高さを引く
     let position = jQuery(target).offset().top - header;
+    if ("fixed" !== jQuery(".js-header").css("position")) {
+      position = jQuery(target).offset().top;
+    }
+    if (0 > position) {
+      position = 0;
+    }
     // その分だけ移動すればヘッダーと被りません
     jQuery("html, body").animate(
       {
