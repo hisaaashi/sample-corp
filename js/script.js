@@ -35,26 +35,17 @@ $(function() {
 
 
 // スムーススクロール
-jQuery('a[href^="#"]').click(function () {
-  let header = jQuery(".js-header").innerHeight();
-  let speed = 300;
-  let id = jQuery(this).attr("href");
-  let target = jQuery("#" == id ? "html" : id);
-  let position = jQuery(target).offset().top - header;
-  if ("fixed" !== jQuery(".js-header").css("position")) {
-    position = jQuery(target).offset().top;
-  }
-  if (0 > position) {
-    position = 0;
-  }
-  jQuery("html, body").animate(
-    {
-      scrollTop: position,
-    },
-    speed
-  );
-  return false;
-});
+  $(function(){
+    $('a[href^="#"]').on("click", function() {
+      var speed = 600;
+      var header_height = $("header").height();
+      var href= $(this).attr("href");
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      var position = target.offset().top - header_height;
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+    });
+  });
 
   // スクロール検知
   jQuery(window).on("scroll", function() {
