@@ -215,6 +215,7 @@ img {
 				width: 10%;
 				border-bottom: 1px solid $color-text;
 				border-color: transparent;
+				transition: all .4s ease 0s;
 			}
 			
 			&:hover,
@@ -222,7 +223,6 @@ img {
 				&::after {
 						border-color: $color-text;
 						width: 100%;
-						transition: all .4s ease 0s;
 				}
 			}
 		}
@@ -676,10 +676,7 @@ img {
 	}
 }
 
-.swiper-pagination 
-.swiper-pagination-clickable 
-.swiper-pagination-bullets 
-.swiper-pagination-horizontal {
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
 	padding-left: 0;
 }
 
@@ -1789,6 +1786,7 @@ label {
 	bottom: 40px;
 	opacity: 0;
 	visibility: hidden;
+	z-index: 10;
 
 	@include mq('sp') {
 		right: 16px;

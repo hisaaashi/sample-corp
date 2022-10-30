@@ -102,7 +102,7 @@ img {
 /* header
 ----------------------------------------------- */
 .header {
-  background: #FFFFFF1A;
+  background: rgba(255, 255, 255, 0.1019607843);
   height: 83px;
   position: fixed;
   top: 0;
@@ -175,11 +175,11 @@ img {
   width: 10%;
   border-bottom: 1px solid #3E3E3E;
   border-color: transparent;
+  transition: all 0.4s ease 0s;
 }
 .header__nav li a:hover::after, .header__nav li a.is-active::after {
   border-color: #3E3E3E;
   width: 100%;
-  transition: all 0.4s ease 0s;
 }
 
 /* main-visual
@@ -352,7 +352,7 @@ img {
   height: 23px;
 }
 .news__link:hover {
-  background-color: #4973FF1A;
+  background-color: rgba(73, 115, 255, 0.1019607843);
   transition: all 0.3s ease 0s;
 }
 
@@ -634,7 +634,7 @@ img {
   }
 }
 
-.swiper-pagination .swiper-pagination-clickable .swiper-pagination-bullets .swiper-pagination-horizontal {
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
   padding-left: 0;
 }
 
@@ -1008,7 +1008,7 @@ img {
 }
 
 .qa-box__content {
-  background: #3B69FF33;
+  background: rgba(59, 105, 255, 0.2);
   border-radius: 4px;
   padding: 13px 16px;
 }
@@ -1364,19 +1364,12 @@ label {
   color: #3E3E3E;
   opacity: 0.5;
 }
-.contact-form__input :-ms-input-placeholder {
-  color: #3E3E3E;
-  opacity: 0.5;
-}
 .contact-form__input ::placeholder {
   color: #3E3E3E;
   opacity: 0.5;
 }
 @media screen and (max-width: 767px) {
   .contact-form__input ::-moz-placeholder {
-    font-size: 14px;
-  }
-  .contact-form__input :-ms-input-placeholder {
     font-size: 14px;
   }
   .contact-form__input ::placeholder {
@@ -1466,7 +1459,7 @@ label {
   transition: all 0.3s ease 0s;
 }
 .contact-form__radio [type=radio]:active + span::before {
-  background: #4973FF1A;
+  background: rgba(73, 115, 255, 0.1019607843);
   transition: all 0s;
 }
 
@@ -1533,7 +1526,7 @@ label {
   transition: all 0.3s ease 0s;
 }
 .contact-form__check [type=checkbox]:active + .check-part::before {
-  background: #4973FF1A;
+  background: rgba(73, 115, 255, 0.1019607843);
   transition: all 0s;
 }
 
@@ -1717,6 +1710,7 @@ label {
   bottom: 40px;
   opacity: 0;
   visibility: hidden;
+  z-index: 10;
 }
 @media screen and (max-width: 767px) {
   .to-top {
