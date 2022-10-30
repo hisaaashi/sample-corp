@@ -117,7 +117,7 @@ $(function() {
       $submit.removeClass( 'is-active' )
     }
   })
-})
+});
 
 
 jQuery('.drawer-icon').on('click',function(e) {
